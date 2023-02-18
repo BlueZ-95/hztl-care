@@ -7,7 +7,7 @@
  */
 
 module.exports = {
-  content: ["./pages/index.js", "./pages/_app.js"],
+  content: ["./pages/index.js", "./pages/_app.js", "./pages/**/*.js"],
   theme: {
     boxShadow: {
       sm: "0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.1)",
