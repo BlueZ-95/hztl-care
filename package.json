@@ -9,13 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.6.1",
     "firebase": "^9.17.1",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.12.1",
-    "yup": "^0.32.9",
-    "@hookform/resolvers": "^2.6.1"
+    "uuid": "^9.0.0",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "eslint": "8.34.0",
