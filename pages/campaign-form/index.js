@@ -1,11 +1,17 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import { v4 as uuidv4 } from "uuid";
+import { addDoc, collection } from "firebase/firestore";
+import { db, firebaseStorage } from "../../firebase/firebase";
+import { useState } from "react";
+import { ref, uploadBytes } from "firebase/storage";
 
 const CampaignForm = () => {
+  const [campaignImage, setcampaignImage] = useState(null);
   // form validation rules
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("First Name is required"),
+    campaignName: Yup.string().required("First Name is required"),
     description: Yup.string().required("Description is required"),
     type: Yup.string().required("Title is required"),
     amount: Yup.string().required("Title is required"),
@@ -31,39 +37,76 @@ const CampaignForm = () => {
   function onSubmit(data) {
     // display form data on success
     alert("SUCCESS!! :-)\n\n" + JSON.stringify(data, null, 4));
+
+    const campaignId = uuidv4();
+
+    if (campaignImage !== null) {
+      const imageRef = ref(
+        firebaseStorage,
+        `campaignImages/campaign-${campaignId}`
+      );
+      uploadBytes(imageRef, campaignImage).then(() => alert("success"));
+    }
+
+    addDoc(collection(db, "campaigns"), {
+      campaignId: campaignId,
+      campaignName: data.campaignName,
+      campaignImage: `campaign-${campaignId}`,
+    }).catch((err) => console.log("err", err));
     return false;
   }
+
+  const uploadImage = () => {
+    if (campaignImage !== null) {
+      const imageRef = ref(
+        firebaseStorage,
+        `campaignImages/campaign-${campaignId}`
+      );
+      uploadBytes(imageRef, campaignImage).then(() => alert("success"));
+    }
+  };
 
   return (
     <div className="">
       <h2 className="">Campaign Form</h2>
       <div className="">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="">
-            <div className="-5">
-              <label>Name</label>
-              <input
-                name="name"
-                type="text"
-                {...register("name")}
-                className={`${errors.name ? "is-invalid" : ""}`}
-              />
-              <div className="invalid-feedback">{errors.name?.message}</div>
+          <div className="-5">
+            <label>Campaign Name</label>
+            <input
+              name="campaignName"
+              type="text"
+              {...register("campaignName")}
+              className={`${errors.name ? "is-invalid" : ""}`}
+            />
+            <div className="invalid-feedback">
+              {errors.campaignName?.message}
             </div>
-            <br />
-            <div className="-5">
-              <label>Description</label>
-              <textarea
-                name="description"
-                {...register("description")}
-                className={`${errors.name ? "is-invalid" : ""}`}
-              />
-              <div className="invalid-feedback">
-                {errors.description?.message}
-              </div>
-            </div>
-            <br />
           </div>
+          <br />
+          <div className="-5">
+            <label>Description</label>
+            <textarea
+              name="description"
+              {...register("description")}
+              className={`${errors.description ? "is-invalid" : ""}`}
+            />
+            <div className="invalid-feedback">
+              {errors.description?.message}
+            </div>
+          </div>
+          <br />
+          <div className="-5">
+            <label>Campaign Image</label>
+            <input
+              type="file"
+              name="campaignImage"
+              onChange={(event) => {
+                setcampaignImage(event.target.files[0]);
+              }}
+            />
+          </div>
+          <br />
           <div className="">
             <label>Type</label>
             <select
@@ -86,7 +129,7 @@ const CampaignForm = () => {
                 name="amount"
                 type="number"
                 {...register("amount")}
-                className={`${errors.name ? "is-invalid" : ""}`}
+                className={`${errors.amount ? "is-invalid" : ""}`}
               />
               <div className="invalid-feedback">{errors.amount?.message}</div>
             </div>
