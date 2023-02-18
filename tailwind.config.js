@@ -23,8 +23,9 @@ module.exports = {
       "theme-outline": "var(--theme-outline-color)",
       "theme-text": "var(--theme-text-color)",
       "theme-text-alt": "var(--theme-text-alt-color)",
-      "theme-error": "var(--theme-error-color)",
-      "theme-error-text": "var(--theme-error-text-color)",
+      "theme-01": "var(--theme-01-color)",
+      "theme-01-text": "var(--theme-01-text-color)",
+      "theme-02": "var(--theme-btn-color)",
       black: "#2f2d2e",
       gray: {
         DEFAULT: "#9e9e9e",
