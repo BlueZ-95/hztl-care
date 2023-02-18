@@ -7,7 +7,13 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 const SignIn = () => {
   // form validation rules
   const validationSchema = Yup.object().shape({
-    email: Yup.string().required("Email is required").email("Email is invalid"),
+    email: Yup.string()
+      .required("Email is required")
+      .email("Email is invalid")
+      .matches(
+        /^[A-Za-z0-9._%+-]+@(horizontal|horizontalintegration)\.com$/,
+        "Horizontal Email is mandatory"
+      ),
     password: Yup.string().required("Password is required"),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
@@ -45,7 +51,7 @@ const SignIn = () => {
               <label>Email</label>
               <input
                 name="email"
-                type="text"
+                type="email"
                 {...register("email")}
                 className={` ${errors.email ? "is-invalid" : ""}`}
               />
