@@ -13,7 +13,7 @@ const SignIn = () => {
       .required("Email is required")
       .email("Email is invalid")
       .matches(
-        /^[A-Za-z0-9._%+-]+@(horizontal|HI)\.com$/,
+        /^[A-Za-z0-9._%+-]+@(horizontal|horizontalintegration)\.com$/,
         "Horizontal Email is mandatory"
       ),
     password: Yup.string().required("Password is required"),
