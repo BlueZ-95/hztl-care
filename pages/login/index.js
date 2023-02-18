@@ -4,6 +4,8 @@ import * as Yup from "yup";
 import { db, firebaseAuth } from "../../firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 const SignUp = () => {
   // form validation rules
   const validationSchema = Yup.object().shape({
@@ -46,95 +48,103 @@ const SignUp = () => {
     return false;
   }
   return (
-    <div className="">
-      <h2 className="">SignUp</h2>
+    <>
+      <Header />
       <div className="">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="">
-            <div className="-5">
-              <label>Name</label>
-              <input
-                name="name"
-                type="text"
-                {...register("name")}
-                className={`form-control ${errors.name ? "is-invalid" : ""}`}
-              />
-              <div className="invalid-feedback">{errors.name?.message}</div>
-            </div>
-            <br />
-          </div>
-          <div className="">
+        <h2 className="">SignUp</h2>
+        <div className="">
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="">
-              <label>Email</label>
-              <input
-                name="email"
-                type="text"
-                {...register("email")}
-                className={`form-control ${errors.email ? "is-invalid" : ""}`}
-              />
-              <div className="invalid-feedback">{errors.email?.message}</div>
-            </div>
-            <br />
-          </div>
-          <div className="">
-            <div className="">
-              <label>Mobile No.</label>
-              <input
-                name="mobile"
-                type="text"
-                {...register("mobile")}
-                className={`form-control ${errors.mobile ? "is-invalid" : ""}`}
-              />
-              <div className="invalid-feedback">{errors.mobile?.message}</div>
-            </div>
-            <br />
-          </div>
-          <div className="">
-            <div className="">
-              <label>Password</label>
-              <input
-                name="password"
-                type="password"
-                {...register("password")}
-                className={`form-control ${
-                  errors.password ? "is-invalid" : ""
-                }`}
-              />
-              <div className="invalid-feedback">{errors.password?.message}</div>
-            </div>
-            <br />
-            <div className="">
-              <label>Confirm Password</label>
-              <input
-                name="confirmPassword"
-                type="password"
-                {...register("confirmPassword")}
-                className={`form-control ${
-                  errors.confirmPassword ? "is-invalid" : ""
-                }`}
-              />
-              <div className="invalid-feedback">
-                {errors.confirmPassword?.message}
+              <div className="-5">
+                <label>Name</label>
+                <input
+                  name="name"
+                  type="text"
+                  {...register("name")}
+                  className={`form-control ${errors.name ? "is-invalid" : ""}`}
+                />
+                <div className="invalid-feedback">{errors.name?.message}</div>
               </div>
+              <br />
             </div>
-            <br />
-          </div>
-          <div className="form-group">
-            <button type="submit" className="btn btn-primary mr-1">
-              Register
-            </button>
-            <button
-              type="button"
-              onClick={() => reset()}
-              className="btn btn-secondary"
-            >
-              Reset
-            </button>
-          </div>
-        </form>
+            <div className="">
+              <div className="">
+                <label>Email</label>
+                <input
+                  name="email"
+                  type="text"
+                  {...register("email")}
+                  className={`form-control ${errors.email ? "is-invalid" : ""}`}
+                />
+                <div className="invalid-feedback">{errors.email?.message}</div>
+              </div>
+              <br />
+            </div>
+            <div className="">
+              <div className="">
+                <label>Mobile No.</label>
+                <input
+                  name="mobile"
+                  type="text"
+                  {...register("mobile")}
+                  className={`form-control ${
+                    errors.mobile ? "is-invalid" : ""
+                  }`}
+                />
+                <div className="invalid-feedback">{errors.mobile?.message}</div>
+              </div>
+              <br />
+            </div>
+            <div className="">
+              <div className="">
+                <label>Password</label>
+                <input
+                  name="password"
+                  type="password"
+                  {...register("password")}
+                  className={`form-control ${
+                    errors.password ? "is-invalid" : ""
+                  }`}
+                />
+                <div className="invalid-feedback">
+                  {errors.password?.message}
+                </div>
+              </div>
+              <br />
+              <div className="">
+                <label>Confirm Password</label>
+                <input
+                  name="confirmPassword"
+                  type="password"
+                  {...register("confirmPassword")}
+                  className={`form-control ${
+                    errors.confirmPassword ? "is-invalid" : ""
+                  }`}
+                />
+                <div className="invalid-feedback">
+                  {errors.confirmPassword?.message}
+                </div>
+              </div>
+              <br />
+            </div>
+            <div className="form-group">
+              <button type="submit" className="btn btn-primary mr-1">
+                Register
+              </button>
+              <button
+                type="button"
+                onClick={() => reset()}
+                className="btn btn-secondary"
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+        </div>
+        <p>Already have an account?</p>
       </div>
-      <p>Already have an account?</p>
-    </div>
+      <Footer />
+    </>
   );
 };
 export default SignUp;
