@@ -8,7 +8,13 @@ const SignUp = () => {
   // form validation rules
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("First Name is required"),
-    email: Yup.string().required("Email is required").email("Email is invalid"),
+    email: Yup.string()
+      .required("Email is required")
+      .email("Email is invalid")
+      .matches(
+        /^[A-Za-z0-9._%+-]+@(horizontal|HI)\.com$/,
+        "Horizontal Email is mandatory"
+      ),
     password: Yup.string()
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"),
