@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import { v4 as uuidv4 } from "uuid";
+import { firebaseAuth } from "../../firebase/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const SignIn = () => {
   // form validation rules
@@ -17,8 +18,20 @@ const SignIn = () => {
 
   function onSubmit(data) {
     // display form data on success
-    console.log("ID: ", uuidv4());
     alert("SUCCESS!! :-)\n\n" + JSON.stringify(data, null, 4));
+
+    signInWithEmailAndPassword(firebaseAuth, data.email, data.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log("success", user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+
     return false;
   }
 
