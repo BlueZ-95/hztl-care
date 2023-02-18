@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <div className="bg-theme-bg-1">
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-          <div className="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
+          <div className="relative flex grid items-center grid-cols-2 lg:grid-cols-3 ">
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
                 <a
@@ -48,9 +48,9 @@ const Header = () => {
             >
               <Image
                 priority
-                src="hcare-logo.svg"
-                height={120}
-                width={120}
+                src="horizontal-care.svg"
+                height={40}
+                width={40}
                 alt="Horizontal Care"
               />
               <span className="ml-2 text-xl font-bold tracking-wide text-theme-01 uppercase hidden">
@@ -63,7 +63,7 @@ const Header = () => {
                   href="/"
                   aria-label="Sign in"
                   title="Sign in"
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-theme-btn-text transition duration-200 rounded shadow-md bg-theme-btn hover:bg-theme-btn-hover focus:shadow-outline focus:outline-none"
+                  className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-theme-btn-text transition duration-200 rounded shadow-md bg-theme-btn hover:bg-theme-btn-hover focus:shadow-outline focus:outline-none"
                 >
                   Sign in
                 </a>
@@ -71,7 +71,7 @@ const Header = () => {
               <li>
                 <a
                   href="/"
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-theme-btn-text transition duration-200 rounded shadow-md bg-theme-btn hover:bg-theme-btn-hover focus:shadow-outline focus:outline-none"
+                  className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-theme-btn-text transition duration-200 rounded shadow-md bg-theme-btn hover:bg-theme-btn-hover focus:shadow-outline focus:outline-none"
                   aria-label="Sign up"
                   title="Sign up"
                 >
@@ -131,10 +131,7 @@ const Header = () => {
                           className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          <svg
-                            className="w-5 text-gray-600"
-                            viewBox="0 0 24 24"
-                          >
+                          <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
                             <path
                               fill="currentColor"
                               d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
@@ -180,7 +177,7 @@ const Header = () => {
                             href="/"
                             aria-label="Sign in"
                             title="Sign in"
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-theme-btn-text transition duration-200 rounded shadow-md bg-theme-btn hover:bg-theme-btn-hover focus:shadow-outline focus:outline-none"
+                            className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-theme-btn-text transition duration-200 rounded shadow-md bg-theme-btn hover:bg-theme-btn-hover focus:shadow-outline focus:outline-none"
                           >
                             Sign in
                           </a>
@@ -188,7 +185,7 @@ const Header = () => {
                         <li>
                           <a
                             href="/"
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-theme-btn-text transition duration-200 rounded shadow-md bg-theme-btn hover:bg-theme-btn-hover focus:shadow-outline focus:outline-none"
+                            className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-theme-btn-text transition duration-200 rounded shadow-md bg-theme-btn hover:bg-theme-btn-hover focus:shadow-outline focus:outline-none"
                             aria-label="Sign up"
                             title="Sign up"
                           >
@@ -205,7 +202,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  );
+  )
 };
 
 export default Header;
