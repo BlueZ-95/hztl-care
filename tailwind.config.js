@@ -7,12 +7,8 @@
  */
 
 module.exports = {
-  content: [
-    "./pages/index.js",
-    "./pages/_app.js",
-    "./pages/**/*.js",
-    "./components/*.js",
-  ],
+  content: ["./pages/index.js", "./pages/_app.js", "./pages/**/*.js", "./components/*.js"],
+  darkMode: false,
   theme: {
     boxShadow: {
       sm: "0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.1)",
@@ -154,4 +150,4 @@ module.exports = {
     },
     lineClamp: ["responsive"],
   },
-};
+}
