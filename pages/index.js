@@ -1,6 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Image from "next/image"
 import { useState } from "react"
 
 export default function Home() {
@@ -208,6 +206,8 @@ export default function Home() {
       </header>
       <main>
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
+          <img src="care_banner.jpg" />
+
           <div className="flex flex-col w-full mb-6 lg:justify-between lg:flex-row md:mb-8">
             <div className="flex items-center mb-5 md:mb-6 group lg:max-w-xl">
               <a href="/" aria-label="Item" className="mr-3">
@@ -314,7 +314,7 @@ export default function Home() {
         </div>
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
           <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
-            <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
+            <div className="flex flex-col items-start shadow-lg w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
               <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
                 <div className="max-w-xl mb-6">
                   <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
@@ -328,12 +328,6 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col items-center md:flex-row">
-                  <a
-                    href="/"
-                    className="inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                  >
-                    Apply Now
-                  </a>
                   <a
                     href="/"
                     aria-label=""
