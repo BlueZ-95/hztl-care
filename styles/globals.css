@@ -1,3 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --theme-bg-color: theme('colors.black');
+  --theme-bg-alt-color: rgba(255, 255, 255, 0.05);
+  --theme-btn-color: theme('colors.turquoise.DEFAULT');
+  --theme-btn-hover-color: theme('colors.turquoise.dark');
+  --theme-btn-text-color: theme('colors.black');
+  --theme-outline-color: theme('colors.white');
+  --theme-text-color: theme('colors.white');
+  --theme-text-alt-color: rgba(255, 255, 255, 0.5);
+  --theme-place-color: theme('colors.error.black');
+  --theme-place-text-color: theme('colors.black');
+}
 html,
 body {
   padding: 0;
