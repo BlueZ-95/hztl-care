@@ -39,39 +39,14 @@ const SignUp = () => {
       <Header />
       <div className="relative">
         <img
-          src="https://images.pexels.com/photos/3747463/pexels-photo-3747463.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-          className="absolute inset-0 object-cover w-full h-full"
+          src="care_bg_banner.jpg"
+          className="absolute inset-0 object-cover w-full h-full opacity-70"
           alt=""
         />
         <div className="relative bg-gray-900 bg-opacity-75">
           <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="flex flex-col items-center justify-between xl:flex-row">
-              <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-                <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-                  The quick, brown fox <br className="hidden md:block" />
-                  jumps over a{" "}
-                  <span className="text-teal-accent-400">lazy dog</span>
-                </h2>
-                <p className="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudan, totam rem aperiam, eaque ipsa
-                  quae.
-                </p>
-                <a
-                  href="/"
-                  aria-label=""
-                  className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
-                >
-                  Learn more
-                  <svg
-                    className="inline-block w-3 ml-2"
-                    fill="currentColor"
-                    viewBox="0 0 12 12"
-                  >
-                    <path d="M9.707,5.293lmb-8mb-8A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5mb-8A1,1,0,0,0,9.707,5.293Z" />
-                  </svg>
-                </a>
-              </div>
+              <div className="w-full max-w-xl xl:mb-0 xl:pr-16 xl:w-7/12"></div>
               <div className="w-full xl:px-8 xl:w-8/12">
                 <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
                   <h2 className="font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl mb-10">
@@ -80,17 +55,13 @@ const SignUp = () => {
                   </h2>
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-8">
-                      <label className="text-sm text-theme-bg block font-bold">
-                        Name
-                      </label>
+                      <label className="text-sm text-theme-bg block font-bold">Name</label>
                       <input
                         name="name"
                         type="text"
                         {...register("name")}
                         className={`appearance-none bg-transparent border-b-4 w-full py-1.5 focus:outline-none ${
-                          errors.name
-                            ? "is-invalid border-theme-01"
-                            : "border-theme-bg"
+                          errors.name ? "is-invalid border-theme-01" : "border-theme-bg"
                         }`}
                       />
                       <div className="invalid-feedback text-theme-01 absolute">
@@ -98,17 +69,13 @@ const SignUp = () => {
                       </div>
                     </div>
                     <div className="mb-8">
-                      <label className="text-sm text-theme-bg block font-bold">
-                        Email
-                      </label>
+                      <label className="text-sm text-theme-bg block font-bold">Email</label>
                       <input
                         name="email"
                         type="text"
                         {...register("email")}
                         className={`appearance-none bg-transparent border-b-4 w-full py-1.5 focus:outline-none ${
-                          errors.email
-                            ? "is-invalid border-theme-01"
-                            : "border-theme-bg"
+                          errors.email ? "is-invalid border-theme-01" : "border-theme-bg"
                         }`}
                       />
                       <div className="invalid-feedback text-theme-01 absolute">
@@ -116,17 +83,13 @@ const SignUp = () => {
                       </div>
                     </div>
                     <div className="mb-8">
-                      <label className="text-sm text-theme-bg block font-bold">
-                        Password
-                      </label>
+                      <label className="text-sm text-theme-bg block font-bold">Password</label>
                       <input
                         name="password"
                         type="password"
                         {...register("password")}
                         className={`appearance-none bg-transparent border-b-4 w-full py-1.5 focus:outline-none ${
-                          errors.password
-                            ? "is-invalid border-theme-01"
-                            : "border-theme-bg"
+                          errors.password ? "is-invalid border-theme-01" : "border-theme-bg"
                         }`}
                       />
                       <div className="invalid-feedback text-theme-01 absolute">
@@ -142,9 +105,7 @@ const SignUp = () => {
                         type="password"
                         {...register("confirmPassword")}
                         className={`appearance-none bg-transparent border-b-4 w-full py-1.5 focus:outline-none ${
-                          errors.confirmPassword
-                            ? "is-invalid border-theme-01"
-                            : "border-theme-bg"
+                          errors.confirmPassword ? "is-invalid border-theme-01" : "border-theme-bg"
                         }`}
                       />
                       <div className="invalid-feedback text-theme-01 absolute">
@@ -175,7 +136,7 @@ const SignUp = () => {
       </div>
       <Footer />
     </>
-  );
+  )
 };
 
 export default SignUp;
