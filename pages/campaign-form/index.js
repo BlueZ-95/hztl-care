@@ -109,9 +109,10 @@ const CampaignForm = () => {
                 </div>
                 <div className="w-full xl:px-8 xl:w-8/12">
                   <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
-                    <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
-                      Sign up for updates
-                    </h3>
+                    <h2 className="font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl mb-10">
+                      <span className="mb-2 bg-theme-bg block h-2 w-14"></span>
+                      Create Campaign
+                    </h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                       <div className="mb-8">
                         <label className="text-sm text-theme-bg block font-bold">
